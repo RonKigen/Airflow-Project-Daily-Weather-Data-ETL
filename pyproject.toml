@@ -1,0 +1,36 @@
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --tb=short"
+testpaths = [
+    "tests",
+    "."
+]
+python_files = [
+    "test_*.py",
+    "*_test.py"
+]
+python_functions = [
+    "test_*"
+]
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weather-etl-pipeline"
+version = "1.0.0"
+description = "Daily Weather Data ETL Pipeline using Apache Airflow"
+authors = [
+    {name = "Data Engineer", email = "engineer@example.com"}
+]
+dependencies = [
+    "apache-airflow==2.8.1",
+    "pandas==2.1.4",
+    "requests==2.31.0",
+    "psycopg2-binary==2.9.9",
+    "sqlalchemy==2.0.25",
+    "python-dotenv==1.0.0",
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0"
+]
